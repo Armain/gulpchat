@@ -12,11 +12,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+}
+
 // Add active class to current nav link based on page
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const currentPage = window.location.pathname;
 document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    // Match root paths
+    if ((currentPage === '/' || currentPage === '/index.html') && href === '/') {
+        link.classList.add('active');
+    } else if (currentPage.includes('creators') && href === '/creators') {
         link.classList.add('active');
     }
 });
