@@ -33,9 +33,9 @@ body {
     height: 100%;
     background: 
         linear-gradient(to bottom, var(--primary-bg) 0%, #0f1629 50%, var(--primary-bg) 100%),
-        repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(255, 255, 255, 0.03) 50px, rgba(255, 255, 255, 0.03) 51px),
-        repeating-linear-gradient(-60deg, transparent, transparent 50px, rgba(255, 255, 255, 0.03) 50px, rgba(255, 255, 255, 0.03) 51px),
-        repeating-linear-gradient(30deg, transparent, transparent 25px, rgba(255, 255, 255, 0.02) 25px, rgba(255, 255, 255, 0.02) 26px);
+        repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(255, 255, 255, 0.08) 50px, rgba(255, 255, 255, 0.08) 51.5px),
+        repeating-linear-gradient(-60deg, transparent, transparent 50px, rgba(255, 255, 255, 0.08) 50px, rgba(255, 255, 255, 0.08) 51.5px),
+        repeating-linear-gradient(30deg, transparent, transparent 25px, rgba(255, 255, 255, 0.05) 25px, rgba(255, 255, 255, 0.05) 26.5px);
     z-index: -1;
 }
 
@@ -43,51 +43,51 @@ body {
 .orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.6;
+    filter: blur(15px);
+    opacity: 0.5;
     animation: float 20s infinite ease-in-out;
 }
 
 .orb-1 {
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.8), transparent);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.9), transparent);
     top: 10%;
     left: 10%;
     animation-delay: 0s;
 }
 
 .orb-2 {
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.7), transparent);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.8), transparent);
     top: 60%;
     right: 15%;
     animation-delay: 5s;
 }
 
 .orb-3 {
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.6), transparent);
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.7), transparent);
     bottom: 20%;
     left: 20%;
     animation-delay: 10s;
 }
 
 .orb-4 {
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.5), transparent);
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.6), transparent);
     top: 40%;
     right: 40%;
     animation-delay: 15s;
 }
 
 .orb-5 {
-    width: 160px;
-    height: 160px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.6), transparent);
+    width: 65px;
+    height: 65px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.7), transparent);
     bottom: 10%;
     right: 30%;
     animation-delay: 7s;
@@ -145,10 +145,11 @@ body {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fbbf24;
+}
+
+.nav-logo {
+    text-decoration: none;
 }
 
 .nav-menu {
@@ -257,7 +258,7 @@ body {
 
 /* ===== BATTLE SECTION ===== */
 .battle-section {
-    padding: 4rem 0 2rem;
+    padding: 4rem 0 1rem;
 }
 
 /* ===== HIGHLIGHTS SECTION WITH CAROUSEL ===== */
@@ -322,9 +323,61 @@ body {
 
 .creators-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
 }
+
+/* Creator Card Simple - Profile Picture Style */
+.creator-card-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.creator-card-simple:hover {
+    transform: translateY(-5px);
+}
+
+.creator-pfp-link {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.creator-pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(139, 92, 246, 0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creator-pfp:hover {
+    border-color: rgba(139, 92, 246, 0.8);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.creator-card-simple .creator-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.creator-card-simple .creator-link {
+    color: var(--accent-purple);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.creator-card-simple .creator-link:hover {
+    color: var(--accent-blue);
+}
+
+/* Old creator card styles - keep for backwards compatibility */
 
 .creator-card {
     background: var(--secondary-bg);
@@ -390,8 +443,8 @@ body {
 
 .disclaimer {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .credit {
@@ -399,9 +452,22 @@ body {
     font-size: 0.9rem;
 }
 
-.credit strong {
-    color: var(--accent-purple);
+.credit-link {
+    text-decoration: none;
     font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.credit-link:hover {
+    opacity: 0.8;
+}
+
+.credit-link.sosa {
+    color: #10b981;
+}
+
+.credit-link.claude {
+    color: #f97316;
 }
 
 /* ===== RESPONSIVE ===== */
