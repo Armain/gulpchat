@@ -33,9 +33,8 @@ body {
     height: 100%;
     background: 
         linear-gradient(to bottom, var(--primary-bg) 0%, #0f1629 50%, var(--primary-bg) 100%),
-        repeating-linear-gradient(60deg, transparent, transparent 50px, rgba(255, 255, 255, 0.08) 50px, rgba(255, 255, 255, 0.08) 51.5px),
-        repeating-linear-gradient(-60deg, transparent, transparent 50px, rgba(255, 255, 255, 0.08) 50px, rgba(255, 255, 255, 0.08) 51.5px),
-        repeating-linear-gradient(30deg, transparent, transparent 25px, rgba(255, 255, 255, 0.05) 25px, rgba(255, 255, 255, 0.05) 26.5px);
+        repeating-linear-gradient(60deg, transparent, transparent 40px, rgba(255, 255, 255, 0.25) 40px, rgba(255, 255, 255, 0.25) 42px),
+        repeating-linear-gradient(-60deg, transparent, transparent 40px, rgba(255, 255, 255, 0.25) 40px, rgba(255, 255, 255, 0.25) 42px);
     z-index: -1;
 }
 
@@ -214,10 +213,7 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fbbf24;
 }
 
 .hero-description-large {
@@ -258,12 +254,12 @@ body {
 
 /* ===== BATTLE SECTION ===== */
 .battle-section {
-    padding: 4rem 0 1rem;
+    padding: 1rem 0 0rem;
 }
 
 /* ===== HIGHLIGHTS SECTION WITH CAROUSEL ===== */
 .highlights-section {
-    padding: 4rem 0;
+    padding: 1rem 0 4rem;
 }
 
 .section-title {
@@ -443,13 +439,13 @@ body {
 
 .disclaimer {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 0.75rem;
 }
 
 .credit {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 1.35rem;
 }
 
 .credit-link {
