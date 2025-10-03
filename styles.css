@@ -763,8 +763,43 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* Mobile Navigation */
+    .hamburger {
+        display: flex !important;
+    }
+    
     .nav-menu {
-        gap: 1rem;
+        position: fixed;
+        top: 73px;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: calc(100vh - 73px);
+        background: rgba(10, 14, 39, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: right 0.3s ease;
+        backdrop-filter: blur(10px);
+        border-left: 3px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+    
+    .nav-link.active::after {
+        bottom: -8px;
+    }
+    
+    /* Hero Section Mobile - More top margin */
+    .hero {
+        margin-top: 100px;
+        padding: 2rem 0;
     }
     
     .hero-title-large {
@@ -775,29 +810,55 @@ body {
         font-size: 1.1rem;
     }
     
-    .discord-widget-wrapper iframe {
-        width: 100%;
-        max-width: 350px;
+    /* Mobile CTA Button - Much Bigger Icon */
+    .cta-button {
+        padding: 1.2rem 2rem;
+        font-size: 0.95rem;
+        gap: 1rem;
+    }
+    
+    .cta-button svg {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px;
+        flex-shrink: 0;
+    }
+    
+    .discord-widget-wrapper {
+        display: none;
+    }
+    
+    .creators-hero {
+        margin-top: 100px;
     }
     
     .creators-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-    
     .hero-title-large {
         font-size: 2rem;
+    }
+    
+    .hero-description-large {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: 1rem 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .cta-button svg {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px;
+    }
+    
+    .creators-grid {
+        grid-template-columns: 1fr;
     }
 }
